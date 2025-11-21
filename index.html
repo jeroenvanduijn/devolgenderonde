@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Volgende Ronde - CrossFit Leiden Community Event</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cfl-red': '#DC2626',
+                        'cfl-yellow': '#FBBF24',
+                        'cfl-teal': '#14B8A6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen flex items-center">
+        <div class="container mx-auto px-6 py-20 md:py-32">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block bg-cfl-red/20 border border-cfl-red/40 rounded-full px-4 py-2 mb-6">
+                    <span class="text-cfl-red font-semibold text-sm tracking-wide">Community Event</span>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    De Volgende Ronde
+                </h1>
+
+                <p class="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
+                    Kies je starttijd. Elke ronde is 5 km. Jij bepaalt hoeveel rondes je doet.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-6 mb-12 text-sm md:text-base">
+                    <div class="flex items-center gap-2">
+                        <span class="text-cfl-yellow">●</span>
+                        <span>Start 20:00</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-cfl-teal">●</span>
+                        <span>Laatste ronde 04:00</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-cfl-red">●</span>
+                        <span>5 km per ronde</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#inschrijven" class="bg-cfl-red hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-lg transition-all transform hover:scale-105 shadow-lg">
+                        Schrijf je in
+                    </a>
+                    <a href="#hoe-werkt-het" class="text-white hover:text-cfl-yellow font-semibold transition-colors">
+                        Hoe werkt het →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wat is De Volgende Ronde -->
+    <section class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-center">
+                    Wat is De Volgende Ronde
+                </h2>
+
+                <div class="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+                    <p>
+                        De Volgende Ronde is een loop avontuur met de community van CrossFit Leiden. Geen wedstrijd. Wel samen 5 kilometer rennen, elk uur opnieuw.
+                    </p>
+
+                    <p>
+                        Elke ronde is 5 km. Elke ronde start op het hele uur. Je hebt maximaal 1 uur om je 5 km af te ronden. Ben je op tijd terug dan mag je door. Ben je te laat dan stopt jouw run.
+                    </p>
+
+                    <p class="font-semibold text-gray-900">
+                        Het mooiste. Je kiest zelf hoe groot jouw uitdaging wordt.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kies je eigen uitdaging -->
+    <section class="py-20 md:py-32 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">
+                Kies je eigen uitdaging
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Explorer Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-cfl-yellow/20 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">🧭</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Explorer</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Schrijf je in voor een latere starttijd en pak 1 tot 3 rondes mee. Perfect als je gewoon eens wilt ervaren hoe dit werkt.
+                    </p>
+                    <p class="text-sm text-gray-500 italic">
+                        Voor iedereen die laagdrempelig wil instappen.
+                    </p>
+                </div>
+
+                <!-- Grinder Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-cfl-teal/20 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">💪</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Grinder</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Start ergens halverwege en pak meerdere rondes achter elkaar. Genoeg tijd om uit te dagen en tussendoor te herstellen.
+                    </p>
+                    <p class="text-sm text-gray-500 italic">
+                        Voor leden met een beetje loopervaring.
+                    </p>
+                </div>
+
+                <!-- Full Send Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-cfl-red/20 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">🔥</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Full Send</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Start vanaf 20:00 en kijk hoe ver jij komt. Ronde na ronde, uur na uur. De community geeft je energie.
+                    </p>
+                    <p class="text-sm text-gray-500 italic">
+                        Voor ervaren lopers en doorzetters.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hoe werkt het precies -->
+    <section id="hoe-werkt-het" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">
+                Hoe werkt het precies
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Steps -->
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-cfl-red rounded-full flex items-center justify-center text-white font-bold">
+                            1
+                        </div>
+                        <p class="text-gray-700 pt-1">
+                            Je schrijft je in en kiest je starttijd.
+                        </p>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-cfl-red rounded-full flex items-center justify-center text-white font-bold">
+                            2
+                        </div>
+                        <p class="text-gray-700 pt-1">
+                            Je komt op tijd naar CrossFit Leiden en meldt je bij de check in.
+                        </p>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-cfl-red rounded-full flex items-center justify-center text-white font-bold">
+                            3
+                        </div>
+                        <p class="text-gray-700 pt-1">
+                            Op het hele uur start jouw ronde van 5 km.
+                        </p>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-cfl-red rounded-full flex items-center justify-center text-white font-bold">
+                            4
+                        </div>
+                        <p class="text-gray-700 pt-1">
+                            Je loopt de route binnen 1 uur en komt terug.
+                        </p>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-cfl-red rounded-full flex items-center justify-center text-white font-bold">
+                            5
+                        </div>
+                        <p class="text-gray-700 pt-1">
+                            Tussen de rondes kun je eten, drinken en bijkomen in de lounge.
+                        </p>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-cfl-red rounded-full flex items-center justify-center text-white font-bold">
+                            6
+                        </div>
+                        <p class="text-gray-700 pt-1">
+                            Ben je op tijd dan mag je door. Ben je te laat dan stopt jouw run.
+                        </p>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-cfl-red rounded-full flex items-center justify-center text-white font-bold">
+                            7
+                        </div>
+                        <p class="text-gray-700 pt-1">
+                            Om 04:00 is de laatste ronde. Iedereen die nog loopt, finisht samen.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Key Facts -->
+                <div class="bg-gray-50 rounded-2xl p-8 shadow-lg h-fit">
+                    <h3 class="text-2xl font-bold mb-6">Key Facts</h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start gap-3">
+                            <span class="text-cfl-red">●</span>
+                            <span>Start eerste ronde: 20:00</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-cfl-red">●</span>
+                            <span>Laatste ronde: 04:00</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-cfl-red">●</span>
+                            <span>5 km per ronde</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-cfl-red">●</span>
+                            <span>Max 20 rondes</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-cfl-red">●</span>
+                            <span>Locatie: CrossFit Leiden en Cronesteyn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voor wie is dit -->
+    <section class="py-20 md:py-32 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-center">
+                    Voor wie is dit
+                </h2>
+
+                <div class="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+                    <p>
+                        Dit event is voor iedereen in onze community die zin heeft in een avontuur.
+                    </p>
+
+                    <p>
+                        Je kiest zelf hoeveel rondes je wilt doen. 1 ronde. 3 rondes. 12 rondes. Alles mag.
+                    </p>
+
+                    <p>
+                        Ben je een drukke ouder die weer iets voor zichzelf wil doen. Een professional die een mentale uitdaging zoekt. Of gewoon iemand die zin heeft om samen iets bijzonders te beleven. Je bent welkom.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Praktische info -->
+    <section class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
+                    Praktische info
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="text-cfl-teal font-bold">●</span>
+                            <div>
+                                <span class="font-semibold">Datum:</span> wordt nog bekendgemaakt
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <span class="text-cfl-teal font-bold">●</span>
+                            <div>
+                                <span class="font-semibold">Tijden:</span> 20:00 tot 04:00
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <span class="text-cfl-teal font-bold">●</span>
+                            <div>
+                                <span class="font-semibold">Ronde:</span> 5 km per uur
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <span class="text-cfl-teal font-bold">●</span>
+                            <div>
+                                <span class="font-semibold">Locatie:</span> CrossFit Leiden, route via Cronesteyn
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="text-cfl-yellow font-bold">●</span>
+                            <div>
+                                <span class="font-semibold">Wat neem je mee:</span> hardloopschoenen, sportkleding, extra lagen, lampje, reflectie, eigen snacks
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <span class="text-cfl-yellow font-bold">●</span>
+                            <div>
+                                <span class="font-semibold">Wat wij regelen:</span> route, chill zone, water, koffie, basis snacks, coaches en vrijwilligers
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Samen finishen -->
+    <section class="py-20 md:py-32 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-center">
+                    Samen finishen
+                </h2>
+
+                <div class="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+                    <p>
+                        De kracht van De Volgende Ronde is het samen finishen.
+                    </p>
+
+                    <p>
+                        Om 04:00 komen de laatste lopers terug. We verzamelen in de gym, drinken iets, maken een groepsfoto en vieren elke ronde die je hebt gepakt.
+                    </p>
+
+                    <p class="text-white font-semibold">
+                        Of je nu 1 ronde hebt gedaan of de hele run. Jij hebt je eigen uitdaging gepakt.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schrijf je in -->
+    <section id="inschrijven" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center">
+                    Schrijf je in
+                </h2>
+
+                <p class="text-lg text-gray-600 mb-12 text-center">
+                    Klaar om mee te doen met De Volgende Ronde. Laat je gegevens achter en kies je starttijd.
+                </p>
+
+                <form class="bg-gray-50 rounded-2xl p-8 shadow-lg space-y-6">
+                    <div>
+                        <label for="naam" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Naam
+                        </label>
+                        <input
+                            type="text"
+                            id="naam"
+                            name="naam"
+                            required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cfl-red focus:border-transparent"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Email
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cfl-red focus:border-transparent"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="telefoon" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Telefoonnummer
+                        </label>
+                        <input
+                            type="tel"
+                            id="telefoon"
+                            name="telefoon"
+                            required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cfl-red focus:border-transparent"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="lidmaatschap" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Lid of geen lid
+                        </label>
+                        <select
+                            id="lidmaatschap"
+                            name="lidmaatschap"
+                            required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cfl-red focus:border-transparent"
+                        >
+                            <option value="">Selecteer een optie</option>
+                            <option value="lid">Lid van CrossFit Leiden</option>
+                            <option value="geen-lid">Geen lid</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="starttijd" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Starttijd
+                        </label>
+                        <select
+                            id="starttijd"
+                            name="starttijd"
+                            required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cfl-red focus:border-transparent"
+                        >
+                            <option value="">Kies je starttijd</option>
+                            <option value="20:00">20:00</option>
+                            <option value="21:00">21:00</option>
+                            <option value="22:00">22:00</option>
+                            <option value="23:00">23:00</option>
+                            <option value="00:00">00:00</option>
+                            <option value="01:00">01:00</option>
+                            <option value="02:00">02:00</option>
+                            <option value="03:00">03:00</option>
+                        </select>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full bg-cfl-red hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-lg transition-all transform hover:scale-105 shadow-lg"
+                    >
+                        Verzend inschrijving
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4">
+                <h3 class="text-xl font-bold text-white mb-2">CrossFit Leiden</h3>
+                <p class="text-gray-400">Rooseveltstraat 49C, Leiden</p>
+            </div>
+
+            <p class="text-gray-400 italic">
+                Niet trainen om te trainen, maar trainen voor het leven daarbuiten.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
