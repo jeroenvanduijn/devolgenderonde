@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="De Volgende Ronde - Community charity hardloopavontuur van CrossFit Leiden voor de Bas van de Goor Foundation">
+    <meta name="description"
+        content="De Volgende Ronde - Community charity hardloopavontuur van CrossFit Leiden voor de Bas van de Goor Foundation">
     <title>De Volgende Ronde - CrossFit Leiden Community Charity Event</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <style>
         /* CSS RESET & BASE */
@@ -15,25 +24,52 @@
         }
 
         :root {
-            /* Brand Colors */
-            --color-red: #E34234;
+            /* Brand Colors - Refined */
+            --color-red: #E63946;
+            --color-red-dark: #C62833;
+            --color-red-light: rgba(230, 57, 70, 0.1);
             --color-yellow: #F4C430;
-            --color-teal: #43B3AE;
-            --color-navy: #0B0E11;
-            --color-mid-grey: #33303A;
-            --color-light-grey: #F4F5F7;
+            --color-yellow-light: rgba(244, 196, 48, 0.15);
+            --color-teal: #2EC4B6;
+            --color-teal-dark: #1B9E91;
+            --color-teal-light: rgba(46, 196, 182, 0.1);
+            --color-navy: #0A0D12;
+            --color-navy-soft: #141821;
+            --color-mid-grey: #4A5568;
+            --color-light-grey: #F7F8FA;
+            --color-border: #E2E8F0;
             --color-white: #FFFFFF;
 
             /* Spacing */
             --spacing-xs: 8px;
             --spacing-sm: 16px;
             --spacing-md: 24px;
-            --spacing-lg: 40px;
-            --spacing-xl: 64px;
-            --spacing-2xl: 96px;
+            --spacing-lg: 48px;
+            --spacing-xl: 80px;
+            --spacing-2xl: 120px;
 
             /* Typography */
-            --font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', Roboto, sans-serif;
+            --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+            --shadow-red: 0 8px 30px rgba(230, 57, 70, 0.35);
+            --shadow-teal: 0 8px 30px rgba(46, 196, 182, 0.35);
+
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-base: 0.25s ease;
+            --transition-slow: 0.4s ease;
         }
 
         html {
@@ -42,50 +78,61 @@
         }
 
         body {
-            font-family: var(--font-family);
+            font-family: var(--font-body);
             color: var(--color-mid-grey);
-            line-height: 1.6;
+            line-height: 1.7;
             background: var(--color-white);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
         /* TYPOGRAPHY */
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
             color: var(--color-navy);
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.15;
             margin-bottom: var(--spacing-md);
-        }
-
-        h1 {
-            font-size: 2.5rem;
             letter-spacing: -0.02em;
         }
 
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+        }
+
         h2 {
-            font-size: 2rem;
-            letter-spacing: -0.01em;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            position: relative;
         }
 
         h3 {
-            font-size: 1.5rem;
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            font-weight: 700;
         }
 
         p {
             margin-bottom: var(--spacing-md);
             font-size: 1.125rem;
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
         a {
             color: var(--color-red);
             text-decoration: none;
-            transition: opacity 0.2s ease;
+            transition: color var(--transition-fast);
+            position: relative;
         }
 
         a:hover {
-            opacity: 0.8;
+            color: var(--color-red-dark);
         }
 
         /* LAYOUT */
@@ -99,6 +146,7 @@
         section {
             padding: var(--spacing-xl) 0;
             text-align: center;
+            position: relative;
         }
 
         .section-grey {
@@ -106,7 +154,7 @@
         }
 
         .section-dark {
-            background: linear-gradient(135deg, var(--color-navy) 0%, #1a1d24 100%);
+            background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-soft) 100%);
             color: var(--color-white);
         }
 
@@ -115,7 +163,7 @@
         }
 
         .section-teal-light {
-            background: rgba(67, 179, 174, 0.08);
+            background: linear-gradient(180deg, var(--color-teal-light) 0%, rgba(46, 196, 182, 0.02) 100%);
         }
 
         /* HERO */
@@ -137,11 +185,24 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(rgba(11, 14, 17, 0.6), rgba(11, 14, 17, 0.6)),
-                        url('https://storage.googleapis.com/msgsndr/s0YuoK12A9YPXCKsfUp3/media/69205c3f5bc0575968fa2fd0.jpg');
+            background:
+                linear-gradient(180deg, rgba(10, 13, 18, 0.4) 0%, rgba(10, 13, 18, 0.8) 100%),
+                url('https://storage.googleapis.com/msgsndr/s0YuoK12A9YPXCKsfUp3/media/69205c3f5bc0575968fa2fd0.jpg');
             background-size: cover;
             background-position: center;
             z-index: 0;
+            transform: scale(1.05);
+            animation: heroZoom 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            0% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
         }
 
         .hero-content {
@@ -149,59 +210,109 @@
             z-index: 1;
             max-width: 900px;
             padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
         }
 
         .hero-label {
-            display: inline-block;
-            background: rgba(227, 66, 52, 0.2);
-            border: 1px solid rgba(227, 66, 52, 0.5);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(230, 57, 70, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(230, 57, 70, 0.3);
             color: var(--color-red);
-            padding: var(--spacing-xs) var(--spacing-md);
-            border-radius: 24px;
-            font-size: 0.875rem;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             margin-bottom: var(--spacing-md);
+        }
+
+        .hero-label::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--color-red);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
         }
 
         .hero h1 {
             color: var(--color-white);
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 8vw, 5rem);
             margin-bottom: var(--spacing-md);
+            font-weight: 900;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: var(--spacing-lg);
-            line-height: 1.6;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-stats {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: var(--spacing-md);
+            gap: var(--spacing-sm) var(--spacing-md);
             margin-bottom: var(--spacing-lg);
         }
 
         .hero-stat {
             display: flex;
             align-items: center;
-            gap: var(--spacing-xs);
+            gap: 10px;
             font-size: 0.95rem;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 10px 18px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .hero-stat-dot {
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
+            box-shadow: 0 0 10px currentColor;
         }
 
-        .dot-yellow { background: var(--color-yellow); }
-        .dot-teal { background: var(--color-teal); }
-        .dot-red { background: var(--color-red); }
+        .dot-yellow {
+            background: var(--color-yellow);
+            color: var(--color-yellow);
+        }
+
+        .dot-teal {
+            background: var(--color-teal);
+            color: var(--color-teal);
+        }
+
+        .dot-red {
+            background: var(--color-red);
+            color: var(--color-red);
+        }
 
         .hero-cta {
             display: flex;
@@ -212,37 +323,63 @@
 
         /* BUTTONS */
         .btn {
-            display: inline-block;
-            padding: 16px 40px;
-            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 18px 44px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-heading);
             font-weight: 600;
             font-size: 1rem;
             text-align: center;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all var(--transition-base);
             border: none;
-            font-family: inherit;
+            text-decoration: none;
         }
 
         .btn-primary {
-            background: var(--color-red);
+            background: linear-gradient(135deg, var(--color-red) 0%, var(--color-red-dark) 100%);
             color: var(--color-white);
-            box-shadow: 0 4px 12px rgba(227, 66, 52, 0.3);
+            box-shadow: var(--shadow-red);
         }
 
         .btn-primary:hover {
-            background: #c93829;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(227, 66, 52, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(230, 57, 70, 0.45);
+            color: var(--color-white);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: var(--color-white);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: var(--color-white);
         }
 
         .btn-link {
             color: var(--color-white);
             font-weight: 600;
+            font-family: var(--font-body);
+            padding: 12px 20px;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
         }
 
         .btn-link:hover {
             color: var(--color-yellow);
+            background: rgba(244, 196, 48, 0.1);
         }
 
         /* CARDS */
@@ -255,31 +392,64 @@
 
         .card {
             background: var(--color-white);
-            border-radius: 12px;
+            border-radius: var(--radius-lg);
             padding: var(--spacing-lg);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-red) 0%, var(--color-yellow) 100%);
+            opacity: 0;
+            transition: opacity var(--transition-base);
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .card:hover::before {
+            opacity: 1;
         }
 
         .card-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 10px;
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
             margin: 0 auto var(--spacing-md);
+            transition: transform var(--transition-base);
         }
 
-        .icon-yellow { background: rgba(244, 196, 48, 0.15); }
-        .icon-teal { background: rgba(67, 179, 174, 0.15); }
-        .icon-red { background: rgba(227, 66, 52, 0.15); }
+        .card:hover .card-icon {
+            transform: scale(1.1);
+        }
+
+        .icon-yellow {
+            background: var(--color-yellow-light);
+        }
+
+        .icon-teal {
+            background: var(--color-teal-light);
+        }
+
+        .icon-red {
+            background: var(--color-red-light);
+        }
 
         .card h3 {
             margin-bottom: var(--spacing-sm);
@@ -287,16 +457,19 @@
 
         .card p {
             font-size: 1rem;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--color-mid-grey);
+            margin-bottom: var(--spacing-xs);
         }
 
         .card-subtext {
             font-size: 0.875rem;
-            color: #6b7280;
+            color: #718096;
             font-style: italic;
             margin-top: var(--spacing-sm);
             margin-bottom: 0;
+            padding-top: var(--spacing-sm);
+            border-top: 1px solid var(--color-border);
         }
 
         /* CONTENT SECTIONS */
@@ -313,32 +486,48 @@
         /* CHARITY SECTION */
         .charity-content {
             background: var(--color-white);
-            border-radius: 12px;
-            padding: var(--spacing-lg);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
             max-width: 900px;
             margin: 0 auto;
+            border: 1px solid var(--color-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .charity-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-teal) 0%, var(--color-teal-dark) 100%);
         }
 
         .charity-logo-placeholder {
-            width: 120px;
-            height: 120px;
-            background: var(--color-light-grey);
-            border-radius: 12px;
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, var(--color-teal-light) 0%, rgba(46, 196, 182, 0.05) 100%);
+            border-radius: var(--radius-lg);
             margin: 0 auto var(--spacing-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-mid-grey);
+            color: var(--color-teal-dark);
             font-size: 0.875rem;
+            font-weight: 500;
+            border: 2px dashed var(--color-teal);
         }
 
         /* STEPS LIST */
         .steps-list {
             list-style: none;
             text-align: left;
-            max-width: 600px;
+            max-width: 650px;
             margin: var(--spacing-lg) auto;
+            padding-left: 0;
         }
 
         .steps-list li {
@@ -346,54 +535,74 @@
             gap: var(--spacing-md);
             margin-bottom: var(--spacing-md);
             align-items: flex-start;
+            position: relative;
+            padding-bottom: var(--spacing-md);
+        }
+
+        .steps-list li:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--color-red) 0%, var(--color-red-light) 100%);
         }
 
         .step-number {
             flex-shrink: 0;
-            width: 32px;
-            height: 32px;
-            background: var(--color-red);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-red) 0%, var(--color-red-dark) 100%);
             color: var(--color-white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: var(--font-heading);
             font-weight: 700;
-            font-size: 0.875rem;
+            font-size: 1rem;
+            box-shadow: var(--shadow-red);
+            position: relative;
+            z-index: 1;
         }
 
         .step-text {
-            padding-top: 4px;
-            font-size: 1rem;
-            line-height: 1.6;
+            padding-top: 8px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--color-mid-grey);
         }
 
         /* KEY FACTS */
         .facts-box {
             background: var(--color-white);
-            border-radius: 12px;
+            border-radius: var(--radius-lg);
             padding: var(--spacing-lg);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            box-shadow: var(--shadow-md);
             max-width: 600px;
             margin: var(--spacing-lg) auto;
+            border: 1px solid var(--color-border);
         }
 
         .facts-list {
             list-style: none;
             text-align: left;
+            padding: 0;
         }
 
         .facts-list li {
             display: flex;
             gap: var(--spacing-sm);
             margin-bottom: var(--spacing-sm);
-            align-items: flex-start;
+            align-items: center;
+            padding: var(--spacing-xs) 0;
+            font-size: 1.05rem;
         }
 
         .fact-bullet {
             color: var(--color-red);
-            font-size: 1.2rem;
-            line-height: 1.5;
+            font-size: 0.6rem;
             flex-shrink: 0;
         }
 
@@ -403,65 +612,113 @@
             grid-template-columns: 1fr;
             gap: var(--spacing-md);
             text-align: left;
-            max-width: 700px;
+            max-width: 800px;
             margin: var(--spacing-lg) auto;
         }
 
         .info-item {
             display: flex;
-            gap: var(--spacing-sm);
+            gap: var(--spacing-md);
             align-items: flex-start;
+            padding: var(--spacing-md);
+            background: var(--color-light-grey);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            transition: transform var(--transition-fast);
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+            border-color: var(--color-teal);
         }
 
         .info-bullet {
             color: var(--color-teal);
-            font-size: 1.2rem;
-            line-height: 1.5;
+            font-size: 1.25rem;
             flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .info-content {
+            flex: 1;
         }
 
         .info-label {
-            font-weight: 600;
+            display: block;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--color-navy);
+            margin-bottom: 4px;
+        }
+
+        .info-value {
+            font-size: 1rem;
+            color: var(--color-mid-grey);
         }
 
         /* ROUTE SECTION */
         .route-map-placeholder {
-            background: #e5e7eb;
-            border-radius: 12px;
+            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+            border-radius: var(--radius-xl);
             aspect-ratio: 16 / 9;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: var(--spacing-lg) auto;
-            max-width: 900px;
+            max-width: 1000px;
+            border: 2px dashed var(--color-border);
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .route-map-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(var(--color-border) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.5;
         }
 
         .route-map-text {
+            position: relative;
+            z-index: 1;
             text-align: center;
-            color: #6b7280;
+            padding: var(--spacing-lg);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-white);
+            box-shadow: var(--shadow-lg);
         }
 
         .route-map-title {
-            font-size: 1.25rem;
-            font-weight: 600;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-navy);
             margin-bottom: var(--spacing-xs);
         }
 
         .route-map-subtitle {
-            font-size: 0.875rem;
+            font-size: 0.95rem;
+            color: var(--color-mid-grey);
         }
 
         /* FORM */
         .form-wrapper {
-            max-width: 600px;
+            max-width: 560px;
             margin: 0 auto;
         }
 
         .form-card {
             background: var(--color-white);
-            border-radius: 12px;
-            padding: var(--spacing-lg);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--color-border);
         }
 
         .form-group {
@@ -471,8 +728,9 @@
 
         .form-label {
             display: block;
+            font-family: var(--font-heading);
             font-weight: 600;
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             color: var(--color-navy);
             margin-bottom: var(--spacing-xs);
         }
@@ -480,92 +738,119 @@
         .form-input,
         .form-select {
             width: 100%;
-            padding: 14px 16px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
+            padding: 16px 18px;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-md);
             font-size: 1rem;
-            font-family: inherit;
+            font-family: var(--font-body);
             color: var(--color-navy);
-            transition: all 0.2s ease;
+            background: var(--color-white);
+            transition: all var(--transition-fast);
+        }
+
+        .form-input:hover,
+        .form-select:hover {
+            border-color: #cbd5e0;
         }
 
         .form-input:focus,
         .form-select:focus {
             outline: none;
             border-color: var(--color-red);
-            box-shadow: 0 0 0 3px rgba(227, 66, 52, 0.1);
+            box-shadow: 0 0 0 4px var(--color-red-light);
         }
 
         .form-button {
             width: 100%;
-            padding: 16px;
-            background: var(--color-red);
+            padding: 18px;
+            background: linear-gradient(135deg, var(--color-red) 0%, var(--color-red-dark) 100%);
             color: var(--color-white);
             border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
+            border-radius: var(--radius-md);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: inherit;
-            box-shadow: 0 4px 12px rgba(227, 66, 52, 0.3);
+            transition: all var(--transition-base);
+            box-shadow: var(--shadow-red);
+            margin-top: var(--spacing-sm);
         }
 
         .form-button:hover {
-            background: #c93829;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(227, 66, 52, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(230, 57, 70, 0.45);
+        }
+
+        .form-button:active {
+            transform: translateY(-1px);
         }
 
         .form-intro {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: var(--color-mid-grey);
             margin-bottom: var(--spacing-lg);
+            line-height: 1.7;
         }
 
         /* FOOTER */
         footer {
-            background: var(--color-navy);
+            background: linear-gradient(180deg, var(--color-navy) 0%, #050709 100%);
             color: var(--color-white);
-            padding: var(--spacing-lg) 0;
+            padding: var(--spacing-xl) 0;
             text-align: center;
         }
 
         footer p {
             margin-bottom: var(--spacing-sm);
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .footer-title {
+            font-family: var(--font-heading);
             color: var(--color-white);
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: var(--spacing-xs);
         }
 
         .footer-tagline {
             font-style: italic;
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 400px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
         .footer-accent {
-            width: 60px;
-            height: 3px;
-            background: var(--color-red);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-red) 0%, var(--color-yellow) 100%);
             margin: var(--spacing-md) auto;
             border-radius: 2px;
         }
 
         /* RESPONSIVE */
         @media (min-width: 600px) {
-            h1 { font-size: 3.5rem; }
-            h2 { font-size: 2.5rem; }
+            h1 {
+                font-size: 3.5rem;
+            }
 
-            section { padding: var(--spacing-2xl) 0; }
+            h2 {
+                font-size: 2.5rem;
+            }
 
-            .hero h1 { font-size: 4rem; }
-            .hero-subtitle { font-size: 1.5rem; }
+            section {
+                padding: var(--spacing-2xl) 0;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
 
             .hero-cta {
                 flex-direction: row;
@@ -592,16 +877,31 @@
         }
 
         @media (min-width: 1200px) {
-            h1 { font-size: 4rem; }
-            h2 { font-size: 3rem; }
+            h1 {
+                font-size: 4rem;
+            }
 
-            .hero h1 { font-size: 4.5rem; }
+            h2 {
+                font-size: 3rem;
+            }
+
+            .hero h1 {
+                font-size: 4.5rem;
+            }
         }
 
         /* UTILITIES */
-        .text-center { text-align: center; }
-        .mt-lg { margin-top: var(--spacing-lg); }
-        .mb-lg { margin-bottom: var(--spacing-lg); }
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-lg {
+            margin-top: var(--spacing-lg);
+        }
+
+        .mb-lg {
+            margin-bottom: var(--spacing-lg);
+        }
 
         /* ANIMATIONS */
         @keyframes fadeInUp {
@@ -609,6 +909,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -618,14 +919,61 @@
         .fade-in-up {
             animation: fadeInUp 0.6s ease-out;
         }
+
+        /* EXTRA POLISH */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2v-4h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2v-4h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @media (max-width: 600px) {
+            .charity-content {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+
+            .hero-stats {
+                gap: 10px;
+            }
+
+            .hero-stat {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-label">Community Charity Event</span>
+            <span class="hero-label float-animation">Community Charity Event</span>
             <h1>De Volgende Ronde</h1>
             <p class="hero-subtitle">
                 Kies je starttijd. Elke ronde is 5 km. Jij bepaalt hoeveel rondes je doet.
@@ -659,10 +1007,12 @@
             <div class="content-wrapper">
                 <h2>Wat is De Volgende Ronde</h2>
                 <p>
-                    De Volgende Ronde is een hardloop avontuur met de community van CrossFit Leiden. Geen wedstrijd. Wel samen 5 kilometer rennen, elk uur opnieuw.
+                    De Volgende Ronde is een hardloop avontuur met de community van CrossFit Leiden. Geen wedstrijd. Wel
+                    samen 5 kilometer rennen, elk uur opnieuw.
                 </p>
                 <p>
-                    Elke ronde is 5 km. Elke ronde start op het hele uur. Je hebt maximaal 1 uur om je 5 km af te ronden. Ben je op tijd terug dan mag je door. Ben je te laat dan stopt jouw run.
+                    Elke ronde is 5 km. Elke ronde start op het hele uur. Je hebt maximaal 1 uur om je 5 km af te
+                    ronden. Ben je op tijd terug dan mag je door. Ben je te laat dan stopt jouw run.
                 </p>
                 <p style="font-weight: 600; color: var(--color-navy);">
                     Het mooiste: je kiest zelf hoe groot jouw uitdaging wordt.
@@ -678,18 +1028,21 @@
                 <h2>Samen lopen voor de Bas van de Goor Foundation</h2>
                 <div class="charity-content">
                     <div class="charity-logo-placeholder">
-                        Logo komt hier
+                        <span style="font-size: 2rem;">🛡️</span>
                     </div>
                     <p>
                         De Volgende Ronde is meer dan een persoonlijke uitdaging. We lopen samen voor een goed doel.
                     </p>
-                    <p style="font-weight: 600; color: var(--color-navy);">
+                    <p style="font-weight: 700; color: var(--color-navy); font-size: 1.25rem;">
                         Alle opbrengsten gaan naar de Bas van de Goor Foundation.
                     </p>
                     <p>
-                        De Bas van de Goor Foundation ondersteunt mensen met diabetes om sportief en actief te blijven. Ze laten zien dat bewegen en sport goed zijn, ook met diabetes. Door mee te doen aan De Volgende Ronde, help je deze missie te realiseren.
+                        De Bas van de Goor Foundation ondersteunt mensen met diabetes om sportief en actief te blijven.
+                        Ze laten zien dat bewegen en sport goed zijn, ook met diabetes. Door mee te doen aan De Volgende
+                        Ronde, help je deze missie te realiseren.
                     </p>
-                    <a href="https://www.basvandegoorfoundation.nl" target="_blank" rel="noopener" class="btn btn-primary" style="background: var(--color-teal); box-shadow: 0 4px 12px rgba(67, 179, 174, 0.3);">
+                    <a href="https://www.basvandegoorfoundation.nl" target="_blank" rel="noopener"
+                        class="btn btn-primary" style="background: var(--color-teal);">
                         Meer over de Bas van de Goor Foundation →
                     </a>
                 </div>
@@ -703,10 +1056,11 @@
             <h2>Kies je eigen uitdaging</h2>
             <div class="card-grid">
                 <div class="card">
-                    <div class="card-icon icon-yellow">🧭</div>
+                    <div class="card-icon icon-yellow float-animation">🧭</div>
                     <h3>Explorer</h3>
                     <p>
-                        Schrijf je in voor een latere starttijd en pak 1 tot 3 rondes mee. Perfect als je gewoon eens wilt ervaren hoe dit werkt.
+                        Schrijf je in voor een latere starttijd en pak 1 tot 3 rondes mee. Perfect als je gewoon eens
+                        wilt ervaren hoe dit werkt.
                     </p>
                     <p class="card-subtext">
                         Voor iedereen die laagdrempelig wil instappen.
@@ -714,10 +1068,11 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-icon icon-teal">💪</div>
+                    <div class="card-icon icon-teal float-animation">💪</div>
                     <h3>Grinder</h3>
                     <p>
-                        Start halverwege en pak meerdere rondes achter elkaar. Genoeg tijd om uit te dagen en tussendoor te herstellen.
+                        Start halverwege en pak meerdere rondes achter elkaar. Genoeg tijd om uit te dagen en tussendoor
+                        te herstellen.
                     </p>
                     <p class="card-subtext">
                         Voor leden met een beetje loopervaring.
@@ -725,7 +1080,7 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-icon icon-red">🔥</div>
+                    <div class="card-icon icon-red float-animation">🔥</div>
                     <h3>Full Send</h3>
                     <p>
                         Start vanaf 20:00 en kijk hoe ver jij komt. Ronde na ronde. De community geeft je energie.
@@ -818,7 +1173,8 @@
                     Je kiest zelf hoeveel rondes je wilt doen. 1 ronde. 3 rondes. 12 rondes. Alles mag.
                 </p>
                 <p>
-                    Ben je een drukke ouder die weer iets voor zichzelf wil doen. Een professional die een mentale uitdaging zoekt. Of gewoon iemand die zin heeft om samen iets bijzonders te beleven. Je bent welkom.
+                    Ben je een drukke ouder die weer iets voor zichzelf wil doen. Een professional die een mentale
+                    uitdaging zoekt. Of gewoon iemand die zin heeft om samen iets bijzonders te beleven. Je bent welkom.
                 </p>
             </div>
         </div>
@@ -831,38 +1187,46 @@
             <div class="info-grid">
                 <div class="info-item">
                     <span class="info-bullet">●</span>
-                    <div>
-                        <span class="info-label">Datum:</span> wordt nog bekendgemaakt
+                    <div class="info-content">
+                        <span class="info-label">Datum</span>
+                        <span class="info-value">Wordt nog bekendgemaakt</span>
                     </div>
                 </div>
                 <div class="info-item">
                     <span class="info-bullet">●</span>
-                    <div>
-                        <span class="info-label">Tijden:</span> 20:00 tot 16:00
+                    <div class="info-content">
+                        <span class="info-label">Tijden</span>
+                        <span class="info-value">20:00 tot 16:00</span>
                     </div>
                 </div>
                 <div class="info-item">
                     <span class="info-bullet">●</span>
-                    <div>
-                        <span class="info-label">Ronde:</span> 5 km per uur
+                    <div class="info-content">
+                        <span class="info-label">Ronde</span>
+                        <span class="info-value">5 km per uur</span>
                     </div>
                 </div>
                 <div class="info-item">
                     <span class="info-bullet">●</span>
-                    <div>
-                        <span class="info-label">Locatie:</span> CrossFit Leiden, route via Cronesteyn
+                    <div class="info-content">
+                        <span class="info-label">Locatie</span>
+                        <span class="info-value">CrossFit Leiden, route via Cronesteyn</span>
                     </div>
                 </div>
                 <div class="info-item">
                     <span class="info-bullet" style="color: var(--color-yellow);">●</span>
-                    <div>
-                        <span class="info-label">Wat neem je mee:</span> hardloopschoenen, sportkleding, extra lagen, lampje, reflectie, eigen snacks
+                    <div class="info-content">
+                        <span class="info-label">Wat neem je mee</span>
+                        <span class="info-value">Hardloopschoenen, sportkleding, extra lagen, lampje, reflectie, eigen
+                            snacks</span>
                     </div>
                 </div>
                 <div class="info-item">
                     <span class="info-bullet" style="color: var(--color-yellow);">●</span>
-                    <div>
-                        <span class="info-label">Wat wij regelen:</span> route, chill zone, water, koffie, basis snacks, coaches en vrijwilligers
+                    <div class="info-content">
+                        <span class="info-label">Wat wij regelen</span>
+                        <span class="info-value">Route, chill zone, water, koffie, basis snacks, coaches en
+                            vrijwilligers</span>
                     </div>
                 </div>
             </div>
@@ -875,7 +1239,8 @@
             <div class="content-wide">
                 <h2>De route</h2>
                 <p>
-                    Elke ronde is 5 km en start bij CrossFit Leiden. De route loopt via het prachtige Cronesteyn en brengt je weer terug naar de gym.
+                    Elke ronde is 5 km en start bij CrossFit Leiden. De route loopt via het prachtige Cronesteyn en
+                    brengt je weer terug naar de gym.
                 </p>
 
                 <div class="route-map-placeholder">
@@ -901,7 +1266,8 @@
                     De kracht van De Volgende Ronde is het samen finishen.
                 </p>
                 <p style="color: rgba(255, 255, 255, 0.9);">
-                    Om 16:00 starten we de laatste ronde. We verzamelen in de gym, drinken iets, maken een groepsfoto en vieren elke ronde die je hebt gepakt.
+                    Om 16:00 starten we de laatste ronde. We verzamelen in de gym, drinken iets, maken een groepsfoto en
+                    vieren elke ronde die je hebt gepakt.
                 </p>
                 <p style="font-weight: 600; color: var(--color-white);">
                     Of je nu 1 ronde hebt gedaan of de hele run. Jij hebt je eigen uitdaging gepakt.
@@ -1009,7 +1375,7 @@
         // Form handling
         const form = document.getElementById('registration-form');
 
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
 
             // Get form data
@@ -1045,7 +1411,7 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('fade-in-up');
@@ -1060,4 +1426,5 @@
     </script>
 
 </body>
+
 </html>
